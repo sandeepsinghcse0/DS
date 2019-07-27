@@ -1,6 +1,6 @@
-package com.ds.LinkedList;
+package com.LinkedList;
 
-import java.util.*;
+//import java.util.*;
 
 class LinkedList{
 	class Node{
