@@ -15,6 +15,28 @@ public class InsertionSort {
 		}
 	}
 	
+	public static void rSort(int arr[]) {
+		if(arr.length<2)
+			return;
+		recSort(arr, arr.length);
+	}
+	
+	public static void recSort(int arr[], int num) {
+		if(num<2) {
+			return;
+		}
+		recSort(arr, num-1);
+		int newElement = arr[num-1];
+		int index = num-1;
+		for(int i = index; i>0 ;i--) {
+			if(arr[i-1] < newElement) {
+				arr[i] = arr[i-1];
+				index = i-1;
+			}
+		}
+		arr[index] = newElement;
+	}
+	
 	private static void swap(int arr[], int i, int j) {
 		if(i==j) {
 			return;
@@ -34,7 +56,8 @@ public class InsertionSort {
 	
 	public static void main(String[] args) {
 		int arr[] = {20, 35, -15, 7, 55, 1, -22};
-		sort(arr);
+		//sort(arr);
+		rSort(arr);
 		for(int i=0 ; i< arr.length; i++) {
 			System.out.print(arr[i] + "     ");
 		}
